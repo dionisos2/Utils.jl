@@ -18,6 +18,8 @@ array = Dict('a'=>1, 'b'=>2, 'c'=>3)
         @test ro == array
         @test get(ro, 'b', 10) == 2
         @test get(ro, 'v', 10) == 10
+        @test haskey(ro, 'b') == true
+        @test haskey(ro, 'w') == false
     end
 
     @testset "Unmodifiable and other errors" begin
